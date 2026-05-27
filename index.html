@@ -374,11 +374,13 @@ window.addEventListener("DOMContentLoaded", () => {
   const closeMenu = document.getElementById("closeMenu");
 
   // BUKA MENU
-  menuBtn.addEventListener("click", () => {
-  mobileMenu.style.right = "0";  
+menuBtn.addEventListener("click", () => {
+  mobileMenu.style.right = "0";
+});
+  
+#mobileMenu{
   transition: right 0.4s ease;
-  });
-
+}
   // TUTUP MENU
   closeMenu.addEventListener("click", () => {
     mobileMenu.style.right = "-100%";
@@ -392,6 +394,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+  
 
 
 </script>

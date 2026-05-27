@@ -1423,7 +1423,7 @@ particlesJS("particles-js", {
 
 <script>
 
-// SIMPAN POSISI SCROLL SAAT KLIK CERTIFICATE
+// SIMPAN POSISI SCROLL SAAT KLIK
 document.querySelectorAll(`
 a[href="academic.html"],
 a[href="nonacademic.html"],
@@ -1438,32 +1438,26 @@ a[href="PSM.html"]
   });
 
 });
-</script>
+
 // KEMBALIKAN POSISI SCROLL
-<script>
+window.addEventListener("load", () => {
 
-if(window.location.pathname.includes("index")){
+  const scrollPosition = sessionStorage.getItem("scrollPosition");
 
-  window.addEventListener("load", () => {
+  if(scrollPosition !== null){
 
-    const scrollPosition = sessionStorage.getItem("scrollPosition");
+    window.scrollTo({
+      top: parseInt(scrollPosition),
+      behavior: "smooth"
+    });
 
-    if(scrollPosition !== null){
+    sessionStorage.removeItem("scrollPosition");
 
-      window.scrollTo({
-        top: parseInt(scrollPosition),
-        behavior: "smooth"
-      });
+  }
 
-      sessionStorage.removeItem("scrollPosition");
+});
 
-    }
-
-  });
-
-}
 </script>
-    
 </body>
 </html>
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -5,27 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Farhan Portofolio</title>
 
+  <!-- TAILWIND -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <!-- FONT AWESOME -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-      scroll-behavior:smooth;
-    }
+<style>
 
-    body{
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
   background:#050816;
   color:white;
   overflow-x:hidden;
-  transition:0.4s;
 }
 
 /* LIGHT MODE */
@@ -34,59 +39,74 @@ body.light-mode{
   color:#111827;
 }
 
-/* CARD LIGHT MODE */
 body.light-mode .glass{
   background:rgba(255,255,255,0.7);
   border:1px solid rgba(0,0,0,0.1);
   color:#111827;
 }
 
-/* SECTION LIGHT */
-body.light-mode section{
-  background:transparent;
-}
-
-/* TEXT */
-body.light-mode .text-gray-400{
-  color:#4b5563 !important;
-}
-
-/* NAVBAR */
 body.light-mode nav{
   background:rgba(255,255,255,0.7);
 }
 
-/* INPUT */
 body.light-mode input,
 body.light-mode textarea{
-  background:#ffffff !important;
-  color:black;
-  border:1px solid #d1d5db;
-}
-
-/* MOBILE MENU */
-body.light-mode #mobileMenu{
-  background:white;
+  background:white !important;
   color:black;
 }
 
-    .glass{
-      background:rgba(255,255,255,0.05);
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,0.1);
-    }
+body.light-mode .text-gray-400{
+  color:#4b5563 !important;
+}
 
-    .gradient{
-      background:linear-gradient(135deg,#00f5ff,#7b2ff7);
-    }
+/* GLASS */
+.glass{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.1);
+}
 
-    .glow:hover{
-      transform:translateY(-10px);
-      transition:.4s;
-      box-shadow:0 0 30px rgba(0,245,255,0.5);
-    }
+/* GRADIENT */
+.gradient{
+  background:linear-gradient(135deg,#00f5ff,#7b2ff7);
+}
 
-    .typing-container{
+/* HOVER */
+.glow{
+  transition:.4s;
+}
+
+.glow:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 30px rgba(0,245,255,0.35);
+}
+
+/* FLOAT */
+.floating{
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-12px);
+  }
+}
+
+/* PARTICLES */
+#particles-js{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+/* TYPING */
+.typing-container{
   display:flex;
   justify-content:center;
   align-items:center;
@@ -96,7 +116,7 @@ body.light-mode #mobileMenu{
 .typing-wrapper{
   position:relative;
   width:100%;
-  max-width:1000px;
+  max-width:700px;
   height:40px;
 }
 
@@ -112,14 +132,11 @@ body.light-mode #mobileMenu{
   font-weight:600;
   color:#00f5ff;
 
-  white-space: nowrap;
-
   opacity:0;
 
   animation:typingFade 9s infinite;
 }
 
-/* DELAY */
 .typing-text:nth-child(1){
   animation-delay:0s;
 }
@@ -160,267 +177,108 @@ body.light-mode #mobileMenu{
 
 }
 
-/* MOBILE */
-@media(max-width:640px){
-
-  .typing-text{
-    font-size:18px;
-    text-align:center;
-    padding:0 10px;
-  }
-
-}
-
-/* Delay tiap text */
-.typing-text:nth-child(1){
-  animation-delay:0s;
-}
-
-.typing-text:nth-child(2){
-  animation-delay:3s;
-}
-
-.typing-text:nth-child(3){
-  animation-delay:6s;
-}
-
-@keyframes textAnimation{
-
-
-
-  10%{
-    opacity:1;
-    transform:
-      rotateX(0deg)
-      translateY(0);
-  }
-
-  30%{
-    opacity:1;
-    transform:
-      rotateX(0deg)
-      translateY(0);
-  }
-
-
-
-  100%{
-    opacity:0;
-  }
-}
-    .floating{
-      animation:float 4s ease-in-out infinite;
-    }
-
-    @keyframes float{
-      0%,100%{
-        transform:translateY(0)
-      }
-      50%{
-        transform:translateY(-15px)
-      }
-      
-    }
-    #particles-js{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-
+/* LOADING */
 .loading-bar{
   width:0%;
   animation:loading 2.5s ease forwards;
 }
 
 @keyframes loading{
-  0%{
-    width:0%;
-  }
   100%{
     width:100%;
   }
 }
-html, body{
-  overflow-x: hidden;
-  width: 100%;
+
+/* MOBILE */
+@media(max-width:640px){
+
+  .typing-text{
+    font-size:17px;
+    text-align:center;
+    padding:0 10px;
+  }
+
 }
 
-section{
-  overflow-x: hidden;
+html,body{
+  overflow-x:hidden;
 }
 
 img{
-  max-width: 100%;
+  max-width:100%;
 }
-  </style>
+
+</style>
 </head>
 
+<body>
 
-  <body>
+<!-- PARTICLES -->
+<div id="particles-js"></div>
 
-    <!-- PARTICLE BACKGROUND -->
-    <div id="particles-js"></div>
-    
-    <!-- PREMIUM LOADER -->
+<!-- LOADER -->
 <div id="loader"
-class="fixed inset-0 bg-[#050816] flex flex-col justify-center items-center z-[9999] overflow-hidden">
+class="fixed inset-0 bg-[#050816] flex flex-col justify-center items-center z-[9999]">
 
-  <!-- Blur Circle -->
-  <div class="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
-  <!-- Logo -->
+  <div class="absolute w-[350px] h-[350px] bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
+
   <div class="relative z-10 flex flex-col items-center">
 
     <div class="relative">
 
-      <div class="w-32 h-32 rounded-full border-4 border-cyan-400/30"></div>
+      <div class="w-32 h-32 rounded-full border-4 border-cyan-400/20"></div>
 
       <div class="absolute inset-0 w-32 h-32 rounded-full border-t-4 border-cyan-400 animate-spin"></div>
 
       <img
-        src="frhn.jpg"
-        class="absolute top-2 left-2 w-28 h-28 rounded-full object-cover border-2 border-cyan-400 shadow-[0_0_30px_#00f5ff]"
+      src="frhn.jpg"
+      class="absolute top-2 left-2 w-28 h-28 rounded-full object-cover border-2 border-cyan-400 shadow-[0_0_30px_#00f5ff]"
       >
 
     </div>
 
-    <!-- Text -->
-    <h1 class="mt-10 text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent tracking-widest animate-pulse text-center w-full">
-  FARHAN PORTOFOLIO
-   </h1>
+    <h1 class="mt-10 text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent tracking-widest text-center">
+      FARHAN PORTOFOLIO
+    </h1>
 
-    <p class="text-gray-400 mt-3 tracking-[6px] text-sm">
+    <p class="text-gray-400 mt-3 tracking-[5px]">
       WELCOME
     </p>
 
-    <!-- Loading Bar -->
-    <div class="w-72 h-2 bg-white/10 rounded-full mt-10 overflow-hidden">
-
+    <div class="w-72 h-2 bg-white/10 rounded-full mt-8 overflow-hidden">
       <div class="loading-bar h-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"></div>
-
     </div>
 
   </div>
 
 </div>
 
-
-<!-- PARTICLE JS -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-
-
-<!-- PARTICLES JS -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-<script>
-
-  // LOADER
-  window.addEventListener("load", () => {
-
-setTimeout(() => {
-
-  const loader = document.getElementById("loader");
-
-  loader.style.opacity = "0";
-  loader.style.transform = "scale(1.1)";
-
-  setTimeout(() => {
-    loader.style.display = "none";
-  }, 1000);
-
-}, 2500);
-  
-  });
-  
-  // PARTICLES
-  particlesJS("particles-js", {
-    particles: {
-      number: {
-        value: 80
-      },
-      color: {
-        value: "#00f5ff"
-      },
-      shape: {
-        type: "circle"
-      },
-      opacity: {
-        value: 0.5
-      },
-      size: {
-        value: 3
-      },
-      line_linked: {
-        enable: true,
-        color: "#00f5ff"
-      },
-      move: {
-        enable: true,
-        speed: 2
-      }
-    }
-  });
-  
-  
-  // MOBILE MENU
-  const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-const closeMenu = document.getElementById("closeMenu");
-
-menuBtn.addEventListener("click", () => {
-  mobileMenu.style.right = "0";
-});
-
-closeMenu.addEventListener("click", () => {
-  mobileMenu.style.right = "-100%";
-});
-
-
-</script>
-</script>
-
-
-
- 
-
-<!-- Navbar -->
-<nav class="fixed top-0 w-full z-50 glass px-6 md:px-10 py-4 flex justify-between items-center">
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 w-full z-50 glass px-6 md:px-10 py-4 flex justify-between items-center">
 
   <h1 class="text-lg md:text-2xl font-bold text-cyan-400">
     Farhan Portofolio
   </h1>
 
-  <!-- MENU DESKTOP -->
+  <!-- DESKTOP -->
   <ul class="hidden md:flex gap-8 text-sm lg:text-base">
+
     <li><a href="#home" class="hover:text-cyan-400">Home</a></li>
     <li><a href="#about" class="hover:text-cyan-400">About</a></li>
     <li><a href="#skills" class="hover:text-cyan-400">Skills</a></li>
     <li><a href="#project" class="hover:text-cyan-400">Projects</a></li>
-    <li><a href="#certificate" class="hover:text-cyan-400">Certificate</a></li>
-    <li><a href="#organization" class="hover:text-cyan-400">Organization</a></li>
     <li><a href="#contact" class="hover:text-cyan-400">Contact</a></li>
+
   </ul>
 
-  <!-- RIGHT MENU -->
+  <!-- RIGHT -->
   <div class="flex items-center gap-4">
 
-    <!-- TOGGLE DARK/LIGHT -->
-    <button
-      id="themeToggle"
-      class="text-2xl text-cyan-400"
-    >
+    <button id="themeToggle" class="text-2xl text-cyan-400">
       🌙
     </button>
 
-    <!-- MOBILE BUTTON -->
-    <button
-      id="menuBtn"
-      class="md:hidden text-3xl text-cyan-400"
-    >
+    <button id="menuBtn" class="md:hidden text-3xl text-cyan-400">
       ☰
     </button>
 
@@ -428,17 +286,14 @@ closeMenu.addEventListener("click", () => {
 
 </nav>
 
-
 <!-- MOBILE MENU -->
 <div
-  id="mobileMenu"
-  class="fixed top-0 right-[-100%] w-64 h-full bg-[#0d1224] z-50 duration-500 p-8 md:hidden"
->
+id="mobileMenu"
+class="fixed top-0 right-[-100%] w-64 h-full bg-[#0d1224] z-50 duration-500 p-8 md:hidden">
 
   <button
-    id="closeMenu"
-    class="text-4xl text-cyan-400 absolute top-4 right-6"
-  >
+  id="closeMenu"
+  class="text-4xl text-cyan-400 absolute top-4 right-6">
     ×
   </button>
 
@@ -448,310 +303,215 @@ closeMenu.addEventListener("click", () => {
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#project">Projects</a></li>
-    <li><a href="#certificate">Certificate</a></li>
-    <li><a href="#organization">Organization</a></li>
     <li><a href="#contact">Contact</a></li>
 
   </ul>
 
 </div>
 
-<!-- Hero -->
-<section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+<!-- HERO -->
+<section id="home"
+class="min-h-screen flex flex-col justify-center items-center text-center px-6">
 
   <img
-    src="frhn.jpg"
-    class="w-44 h-44 rounded-full object-cover border-4 border-cyan-400 floating"
+  src="frhn.jpg"
+  class="w-40 h-40 md:w-44 md:h-44 rounded-full object-cover border-4 border-cyan-400 floating shadow-[0_0_35px_#00f5ff50]"
   >
-  <h1 class="text-4xl md:text-6xl font-bold mt-8 leading-tight text-center relative z-10">
-    Hi, I'm <span class="text-cyan-400">Farhan Fadilah Maulana</span>
+
+  <h1 class="text-4xl md:text-6xl font-bold mt-8 leading-tight">
+    Hi, I'm
+    <span class="text-cyan-400">
+      Farhan Fadilah Maulana
+    </span>
   </h1>
-  
-  <div class="typing-container mt-4 relative z-10">
-  
+
+  <!-- TYPING -->
+  <div class="typing-container mt-5">
+
     <div class="typing-wrapper">
-  
+
       <p class="typing-text">
         Front-End Developer & UI/UX Designer
       </p>
-  
+
       <p class="typing-text">
         Data Analyst
       </p>
-  
+
       <p class="typing-text">
         Software Engineer
       </p>
-  
+
     </div>
-  
+
   </div>
 
+  <!-- BUTTON -->
+  <div class="flex flex-col sm:flex-row gap-5 mt-10 w-full justify-center items-center">
 
-  <!-- BUTTON HERO -->
-<div class="flex flex-col sm:flex-row justify-center items-center gap-5 mt-10">
+    <a href="#project"
+    class="gradient px-10 py-4 rounded-full font-semibold text-lg shadow-lg hover:scale-105 duration-300 w-full sm:w-auto">
+      View Project
+    </a>
 
-  <!-- VIEW PROJECT -->
-  <a href="#project"
-    class="gradient px-10 py-4 rounded-full font-semibold text-lg shadow-lg hover:scale-105 duration-300 w-full sm:w-auto text-center">
-    View Project
-  </a>
+    <a href="#contact"
+    class="border border-cyan-400 px-10 py-4 rounded-full text-lg hover:bg-cyan-400 hover:text-black duration-300 w-full sm:w-auto">
+      Contact Me
+    </a>
 
-  <!-- CONTACT -->
-  <a href="#contact"
-    class="border border-cyan-400 px-10 py-4 rounded-full text-lg hover:bg-cyan-400 hover:text-black duration-300 w-full sm:w-auto text-center">
-    Contact Me
-  </a>
-
-  <!-- DOWNLOAD CV -->
-  <a href="Farhan Fadilah Maulana CV_.pdf"
+    <a href="Farhan Fadilah Maulana CV_.pdf"
     download
-    class="border border-cyan-400 px-10 py-4 rounded-full text-lg hover:bg-cyan-400 hover:text-black duration-300 w-full sm:w-auto text-center">
-    Download CV
-  </a>
+    class="border border-cyan-400 px-10 py-4 rounded-full text-lg hover:bg-cyan-400 hover:text-black duration-300 w-full sm:w-auto">
+      Download CV
+    </a>
 
-</div>
+  </div>
 
-<!-- SOCIAL MEDIA -->
-<div class="flex gap-6 mt-8 text-3xl justify-center">
+  <!-- SOCIAL -->
+  <div class="flex gap-6 mt-8 text-3xl">
 
-<a href="https://github.com/farhan29fadilah29"
-target="_blank"
-class="hover:text-cyan-400 duration-300 hover:scale-125">
+    <a href="https://github.com/farhan29fadilah29"
+    target="_blank"
+    class="hover:text-cyan-400 hover:scale-125 duration-300">
+      <i class="fab fa-github"></i>
+    </a>
 
-  <i class="fab fa-github"></i>
+    <a href="https://instagram.com/frhan29_"
+    target="_blank"
+    class="hover:text-pink-400 hover:scale-125 duration-300">
+      <i class="fab fa-instagram"></i>
+    </a>
 
-</a>
+    <a href="https://wa.me/62895365569519"
+    target="_blank"
+    class="hover:text-green-400 hover:scale-125 duration-300">
+      <i class="fab fa-whatsapp"></i>
+    </a>
 
+  </div>
 
-<a href="https://instagram.com/frhan29_"
-target="_blank"
-class="hover:text-pink-400 duration-300 hover:scale-125">
-
-  <i class="fab fa-instagram"></i>
-
-</a>
-
-<a href="https://tiktok.com/@frhannfdlh"
-target="_blank"
-class="hover:text-white duration-300 hover:scale-125">
-
-  <i class="fab fa-tiktok"></i>
-
-</a>
-
-<a href="https://wa.me/62895365569519"
-target="_blank"
-class="hover:text-green-400 duration-300 hover:scale-125">
-
-  <i class="fab fa-whatsapp"></i>
-
-</a>
-
-</div>
 </section>
 
-
-
-<!-- About -->
+<!-- ABOUT -->
 <section id="about" class="py-24 px-6 md:px-20">
 
   <h1 class="text-4xl font-bold text-center mb-16">
     About <span class="text-cyan-400">Me</span>
   </h1>
 
-  <div class="relative">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
 
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+    <!-- IMAGE -->
+    <div class="relative w-fit mx-auto">
 
-<!-- FOTO -->
-<div class="relative w-fit mx-auto">
+      <div class="absolute inset-0 bg-cyan-400 blur-3xl opacity-20 rounded-3xl"></div>
 
-  <!-- GLOW -->
-  <div class="absolute inset-0 bg-cyan-400 blur-3xl opacity-20 rounded-3xl"></div>
+      <img
+      src="frhn.jpg"
+      class="relative rounded-3xl shadow-2xl w-full max-w-[320px] hover:scale-105 duration-500"
+      >
 
-  <!-- IMAGE -->
-  <img
-  src="frhn.jpg"
-  class="relative rounded-3xl shadow-2xl 
-  w-full max-w-[280px] md:max-w-[350px]
-  hover:scale-105 duration-500"
-/>
+    </div>
 
-  <!-- FLOATING ICON -->
-  <div class="absolute -top-4 -left-4 glass p-3 rounded-2xl">
-    <i class="fab fa-html5 text-orange-500 text-3xl"></i>
+    <!-- TEXT -->
+    <div>
+
+      <div class="inline-block px-4 py-2 rounded-full glass text-cyan-400 mb-6">
+        ✨ Available For Freelance
+      </div>
+
+      <p class="text-gray-400 leading-8 text-lg">
+        Mahasiswa Sistem Informasi Universitas Ibn Khaldun Bogor yang memiliki minat di bidang Front-End Development dan UI/UX Design.
+      </p>
+
+      <!-- STATS -->
+      <div class="grid grid-cols-2 gap-6 mt-10">
+
+        <div class="glass p-6 rounded-3xl glow text-center">
+          <h2 class="text-3xl font-bold text-cyan-400">
+            4+
+          </h2>
+
+          <p class="text-gray-400 mt-2">
+            Projects
+          </p>
+        </div>
+
+        <div class="glass p-6 rounded-3xl glow text-center">
+          <h2 class="text-3xl font-bold text-cyan-400">
+            2+
+          </h2>
+
+          <p class="text-gray-400 mt-2">
+            Organizations
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="absolute -bottom-4 -right-4 glass p-3 rounded-2xl">
-    <i class="fab fa-react text-cyan-400 text-3xl"></i>
-  </div>
-
-</div>
-
-<!-- TEXT -->
-<div>
-
-  <!-- BADGE -->
-  <div class="inline-block px-4 py-2 rounded-full glass text-cyan-400 mb-6">
-    ✨ Available For Freelance
-  </div>
-
-  <!-- TITLE -->
-  <p class="text-gray-400 leading-8 text-lg">
-    Mahasiswa Sistem Informasi Universitas Ibn Khaldun Bogor yang memiliki minat di bidang Front-End Development dan UI/UX Design. Fokus dalam membuat website modern, responsive, dan interaktif menggunakan HTML, CSS, JavaScript, React, Python, dan Tailwind CSS, serta memiliki kemampuan dasar di bidang Data Analyst, Networking, dan Microsoft Office.
-  </p>
-
-  <!-- STATS -->
-<div class="grid grid-cols-2 gap-6 mt-10">
-
-  <div class="glass p-6 rounded-3xl glow">
-    <h2 class="text-3xl font-bold text-cyan-400">4+</h2>
-    <p class="text-gray-400 mt-2">Completed Projects</p>
-  </div>
-
-  <div class="glass p-6 rounded-3xl glow">
-    <h2 class="text-3xl font-bold text-cyan-400">2+</h2>
-    <p class="text-gray-400 mt-2">Organizations</p>
-  </div>
-
-</div>
-
-</div>
-
-</div>
 </section>
-<!-- Skills -->
+
+<!-- SKILLS -->
 <section id="skills" class="py-24 px-6 md:px-20 bg-[#0d1224]">
 
   <h1 class="text-4xl font-bold text-center mb-16">
     My <span class="text-cyan-400">Skills</span>
   </h1>
 
-  <!-- GRID -->
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
-    <!-- HTML -->
     <div class="glass p-8 rounded-3xl text-center glow">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
-        class="w-16 h-16 mx-auto object-contain"
-      >
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
+      class="w-16 h-16 mx-auto">
       <h2 class="text-xl font-semibold mt-4">HTML</h2>
     </div>
 
-    <!-- CSS -->
     <div class="glass p-8 rounded-3xl text-center glow">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
-        class="w-16 h-16 mx-auto object-contain"
-      >
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
+      class="w-16 h-16 mx-auto">
       <h2 class="text-xl font-semibold mt-4">CSS</h2>
     </div>
 
-    <!-- JavaScript -->
     <div class="glass p-8 rounded-3xl text-center glow">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
-        class="w-16 h-16 mx-auto object-contain"
-      >
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+      class="w-16 h-16 mx-auto">
       <h2 class="text-xl font-semibold mt-4">JavaScript</h2>
     </div>
 
-    <!-- Python -->
     <div class="glass p-8 rounded-3xl text-center glow">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
-        class="w-16 h-16 mx-auto object-contain"
-      >
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
+      class="w-16 h-16 mx-auto">
       <h2 class="text-xl font-semibold mt-4">Python</h2>
-    </div>
-
-    <!-- React -->
-    <div class="glass p-8 rounded-3xl text-center glow">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png"
-        class="w-16 h-16 mx-auto object-contain"
-      >
-      <h2 class="text-xl font-semibold mt-4">React</h2>
-    </div>
-
-    <!-- UI UX -->
-    <div class="glass p-8 rounded-3xl text-center glow">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
-        class="w-16 h-16 mx-auto object-contain"
-      >
-      <h2 class="text-xl font-semibold mt-4">UI/UX Design</h2>
-    </div>
-
-    <!-- Microsoft Office -->
-    <div class="glass p-8 rounded-3xl text-center glow">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/732/732220.png"
-        class="w-16 h-16 mx-auto object-contain"
-      >
-      <h2 class="text-xl font-semibold mt-4">Microsoft Office</h2>
-    </div>
-
-    <!-- Data Analyst -->
-    <div class="glass p-8 rounded-3xl text-center glow">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/4149/4149680.png"
-        class="w-16 h-16 mx-auto object-contain"
-      >
-      <h2 class="text-xl font-semibold mt-4">Data Analyst</h2>
-    </div>
-
-    <!-- Networking -->
-    <div class="glass p-8 rounded-3xl text-center glow">
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/2885/2885417.png"
-        class="w-16 h-16 mx-auto object-contain"
-      >
-      <h2 class="text-xl font-semibold mt-4">Networking</h2>
     </div>
 
   </div>
 
 </section>
 
-<!-- Projects -->
+<!-- PROJECT -->
 <section id="project" class="py-24 px-6 md:px-20">
 
   <h1 class="text-4xl font-bold text-center mb-16">
     Featured <span class="text-cyan-400">Projects</span>
   </h1>
 
-  <div class="grid md:grid-cols-3 gap-10">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-    <!-- Project 1 -->
+    <!-- CARD -->
     <div class="glass rounded-3xl overflow-hidden glow group">
 
-      <!-- IMAGE -->
-      <div class="relative overflow-hidden">
+      <div class="overflow-hidden">
 
-        
         <img
-  src="GitHub_Invertocat_Logo.svg.png"
-  class="w-full h-60 object-contain bg-white p-4"
-  onclick="openImage(this.src)"
->
-
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 duration-300 flex justify-center items-center">
-
-          <a href="https://github.com/farhan29fadilah29"
-            target="_blank"
-            class="bg-cyan-400 text-black px-6 py-3 rounded-xl font-bold hover:scale-110 duration-300">
-            View Project
-          </a>
-
-        </div>
+        src="GitHub_Invertocat_Logo.svg.png"
+        class="w-full h-60 object-contain bg-white p-4 group-hover:scale-110 duration-500">
 
       </div>
 
-      <!-- TEXT -->
       <div class="p-6">
 
         <h2 class="text-2xl font-bold">
@@ -766,144 +526,39 @@ class="hover:text-green-400 duration-300 hover:scale-125">
 
     </div>
 
-    <!-- Project FIGMA -->
-<div class="glass rounded-3xl overflow-hidden glow group">
-
-  <!-- IMAGE -->
-  <div class="relative overflow-hidden">
-
-    <img
-      src="putih.jpg"
-      class="w-full h-60 object-contain bg-white p-4"
-      onclick="openImage(this.src)"
-    >
-
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 duration-300 flex justify-center items-center">
-
-      <a href="https://www.figma.com/@farhanfadilah29"
-      target="_blank"
-      class="bg-cyan-400 text-black px-6 py-3 rounded-xl font-bold hover:scale-110 duration-300">
-      View Project
-      </a>
-
-    </div>
-
-  </div>
-
-  <!-- TEXT -->
-  <div class="p-6">
-
-    <h2 class="text-2xl font-bold">
-      Figma Design
-    </h2>
-
-    <p class="text-gray-400 mt-3">
-      UI/UX mobile dan website design menggunakan Figma.
-    </p>
-
-  </div>
-
-</div>
-
-    <!-- Project 2 -->
+    <!-- CARD -->
     <div class="glass rounded-3xl overflow-hidden glow group">
 
-      <div class="relative overflow-hidden">
+      <div class="overflow-hidden">
 
         <img
-          src="putih.jpg"
-          class="h-56 w-full object-cover group-hover:scale-110 duration-500 cursor-pointer"
-          onclick="openImage(this.src)"
-        >
-
-        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 duration-300 flex justify-center items-center">
-
-          <a href="https://dribbble.com/"
-            target="_blank"
-            class="bg-cyan-400 text-black px-6 py-3 rounded-xl font-bold hover:scale-110 duration-300">
-            View Project
-          </a>
-
-        </div>
+        src="putih.jpg"
+        class="w-full h-60 object-cover group-hover:scale-110 duration-500">
 
       </div>
 
       <div class="p-6">
 
         <h2 class="text-2xl font-bold">
-          E-Commerce UI
+          Figma Design
         </h2>
 
         <p class="text-gray-400 mt-3">
-          Desain online shop clean dan aesthetic.
+          UI/UX mobile dan website design menggunakan Figma.
         </p>
 
       </div>
 
     </div>
- 
-  
-      <div class="glass rounded-3xl overflow-hidden glow group">
-  
-        <div class="relative overflow-hidden">
-  
-          <img
-            src="rw-removebg-preview.png"
-            class="w-full h-60 object-contain bg-white p-4"
-            onclick="openImage(this.src)"
-          >
 
-  
-          <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 duration-300 flex justify-center items-center">
-            <a href="https://farhan29fadilah29.github.io/pemudapemudi02/web02.html"
-              target="_blank"
-              class="bg-cyan-400 text-black px-6 py-3 rounded-xl font-bold hover:scale-110 duration-300">
-              View Project
-            </a>
-  
-          </div>
-  
-        </div>
-  
-        <div class="p-6">
-  
-          <h2 class="text-2xl font-bold">
-            Website Karang Taruna
-          </h2>
-  
-          <p class="text-gray-400 mt-3">
-            Website digital modern modern, simple dan responsive.
-          </p>
-  
-        </div>
-  
-      </div>
-  
-    </div>
-  
-  </section>
-    <!-- Project 3 -->
+    <!-- CARD -->
     <div class="glass rounded-3xl overflow-hidden glow group">
 
-      <div class="relative overflow-hidden">
+      <div class="overflow-hidden">
 
         <img
-          src="hp-removebg-preview.png"
-          class="w-full h-60 object-contain bg-white p-4"
-
-          onclick="openImage(this.src)"
-        >
-
-        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 duration-300 flex justify-center items-center">
-
-          <a href="https://saniahjulianti.github.io/UNDANGAN-DIGITAL/"
-            target="_blank"
-            class="bg-cyan-400 text-black px-6 py-3 rounded-xl font-bold hover:scale-110 duration-300">
-            View Project
-          </a>
-
-        </div>
+        src="hp-removebg-preview.png"
+        class="w-full h-60 object-contain bg-white p-4 group-hover:scale-110 duration-500">
 
       </div>
 
@@ -925,536 +580,221 @@ class="hover:text-green-400 duration-300 hover:scale-125">
 
 </section>
 
-
-<!-- =========================
-SECTION CERTIFICATE
-========================= -->
-
-<section id="certificate" class="py-24 px-6 md:px-20 bg-[#0d1224]">
-
-  <h1 class="text-5xl font-bold text-center mb-20">
-    My <span class="text-cyan-400">Certificates</span>
-  </h1>
-
-  <!-- GRID -->
-  <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-
-    <!-- Academic -->
-    <a href="academic.html"
-      class="glass rounded-3xl overflow-hidden glow group flex flex-col">
-
-      <!-- IMAGE -->
-      <div class="h-72 overflow-hidden">
-
-        <img
-          src="putih.jpg"
-          class="w-full h-full object-cover group-hover:scale-110 duration-500"
-        >
-
-      </div>
-
-      <!-- CONTENT -->
-      <div class="p-8 flex flex-col flex-1 justify-center text-center">
-
-        <h2 class="text-3xl font-bold text-cyan-400">
-          Academic Certificate
-        </h2>
-
-        <p class="text-gray-400 mt-4 leading-7">
-          Klik untuk melihat semua sertifikat akademik.
-        </p>
-
-      </div>
-
-    </a>
-
-    <!-- Non Academic -->
-    <a href="nonacademic.html"
-      class="glass rounded-3xl overflow-hidden glow group flex flex-col">
-
-      <!-- IMAGE -->
-      <div class="h-72 overflow-hidden">
-
-        <img
-          src="putih.jpg"
-          class="w-full h-full object-cover group-hover:scale-110 duration-500"
-        >
-
-      </div>
-
-      <!-- CONTENT -->
-      <div class="p-8 flex flex-col flex-1 justify-center text-center">
-
-        <h2 class="text-3xl font-bold text-cyan-400">
-          Non Academic Certificate
-        </h2>
-
-        <p class="text-gray-400 mt-4 leading-7">
-          Klik untuk melihat semua sertifikat non akademik.
-        </p>
-
-      </div>
-
-    </a>
-
-  </div>
-
-</section>
-
-<!-- =========================
-SECTION ORGANIZATION
-========================= -->
-
-<section id="organization" class="py-24 px-6 md:px-20">
-
-<h1 class="text-3xl md:text-5xl font-bold text-center mb-20 leading-tight px-4">
-  Organizational <span class="text-cyan-400">Experience</span>
-</h1>
-  <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-
-<!-- HIMA -->
-<a href="hima.html"
-  class="glass rounded-3xl overflow-hidden glow block">
-
-  <div class="bg-white flex justify-center items-center h-72 p-4">
-    <img
-      src="himasif-removebg-preview (1).png"
-      class="max-h-full max-w-full object-contain"
-    >
-  </div>
-
-  <div class="p-6">
-
-    <h2 class="text-3xl font-bold text-cyan-400">
-      Himpunan Mahasiswa Sistem Informasi Uika Bogor
-    </h2>
-
-    <p class="text-gray-400 mt-4 leading-8">
-      Dokumentasi kegiatan organisasi kampus
-    </p>
-
-  </div>
-
-</a>
-
-<!-- PSM -->
-<a href="PSM.html"
-  class="glass rounded-3xl overflow-hidden glow block">
-
-  <div class="bg-white flex justify-center items-center h-72 p-4">
-    <img
-      src="psm.jpg"
-      class="max-h-full max-w-full object-contain"
-    >
-  </div>
-
-  <div class="p-6">
-
-    <h2 class="text-3xl font-bold text-cyan-400">
-      Paduan Suara Mahasiswa Ibn Khaldun Bogor
-    </h2>
-
-    <p class="text-gray-400 mt-4 leading-8">
-      Dokumentasi event dan kepanitiaan.
-    </p>
-
-  </div>
-
-</a>
-
-  </div>
-
-</section>
-
 <!-- CONTACT -->
-<section id="contact" class="py-28 px-6 md:px-20 bg-[#0d1224]">
+<section id="contact" class="py-28 px-4 md:px-20 bg-[#0d1224] overflow-hidden">
 
-  <h1 class="text-3xl md:text-5xl font-bold text-center mb-14 md:mb-20">
-    Contact <span class="text-cyan-400">Me</span>
-  </h1>
+  <div class="text-center mb-16">
 
-  
+    <h1 class="text-4xl md:text-5xl font-bold">
+      Contact <span class="text-cyan-400">Me</span>
+    </h1>
 
-  <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto items-center px-2">
-    <!-- LEFT INFO -->
-      <div class="glass p-5 md:p-10 rounded-[25px] md:rounded-[35px] w-full">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6">
-        Let's Work Together 🚀
-      </h2>
+    <p class="text-gray-400 mt-4 max-w-2xl mx-auto leading-8">
+      Tertarik bekerja sama atau membuat project?
+    </p>
 
-      <p class="text-gray-400 leading-8 mb-10">
-        Jika kamu tertarik bekerja sama, membuat website,
-        UI/UX Design, atau project lainnya,
-        silakan hubungi saya melalui kontak berikut.
-      </p>
-      
-     <!-- EMAIL -->
-<a 
-href="mailto:fadilahfarhan0529@gmail.com"
-target="_blank"
-class="flex items-center gap-5 mb-6 hover:scale-105 duration-300"
->
+  </div>
 
-<div class="w-14 h-14 rounded-2xl bg-red-400/20 flex justify-center items-center text-red-400 text-2xl">
-  <i class="fas fa-envelope"></i>
-</div>
+  <div class="max-w-6xl mx-auto">
 
-<div>
-  <h3 class="font-bold text-lg">Email</h3>
-  <p class="text-gray-400">
-    fadilahfarhan0529@gmail.com
-  </p>
-</div>
+    <div class="grid lg:grid-cols-2 gap-8">
 
-</a>
+      <!-- LEFT -->
+      <div class="glass rounded-[35px] p-6 md:p-10">
 
-     <!-- WHATSAPP -->
-<a 
-href="https://wa.me/62895365569519"
-target="_blank"
-class="flex items-center gap-5 mb-6 hover:scale-105 duration-300"
->
+        <h2 class="text-3xl font-bold">
+          Let's Work Together 🚀
+        </h2>
 
-<div class="w-14 h-14 rounded-2xl bg-green-400/20 flex justify-center items-center text-green-400 text-2xl">
-  <i class="fab fa-whatsapp"></i>
-</div>
+        <p class="text-gray-400 mt-5 leading-8">
+          Saya siap membantu membuat website modern dan responsive.
+        </p>
 
-<div>
-  <h3 class="font-bold text-lg">WhatsApp</h3>
-  <p class="text-gray-400">
-    +62 895-3655-69519
-  </p>
-</div>
+        <!-- CONTACT ITEM -->
+        <div class="space-y-6 mt-10">
 
-</a>
+          <!-- EMAIL -->
+          <a
+          href="mailto:fadilahfarhan0529@gmail.com"
+          class="glass p-5 rounded-3xl flex items-center gap-5 hover:scale-[1.02] duration-300">
 
-<!-- INSTAGRAM -->
-<a 
-href="https://instagram.com/frhan29_"
-target="_blank"
-class="flex items-center gap-5 hover:scale-105 duration-300"
->
+            <div class="w-16 h-16 rounded-2xl bg-red-400/20 flex justify-center items-center text-red-400 text-2xl">
+              <i class="fas fa-envelope"></i>
+            </div>
 
-<div class="w-14 h-14 rounded-2xl bg-pink-400/20 flex justify-center items-center text-pink-400 text-2xl">
-  <i class="fab fa-instagram"></i>
-</div>
+            <div>
+              <h3 class="font-bold text-lg">Email</h3>
+              <p class="text-gray-400 break-all">
+                fadilahfarhan0529@gmail.com
+              </p>
+            </div>
 
-<div>
-  <h3 class="font-bold text-lg">Instagram</h3>
-  <p class="text-gray-400">
-    @frhan29_
-  </p>
-</div>
+          </a>
 
-</a>
+          <!-- WA -->
+          <a
+          href="https://wa.me/62895365569519"
+          class="glass p-5 rounded-3xl flex items-center gap-5 hover:scale-[1.02] duration-300">
 
+            <div class="w-16 h-16 rounded-2xl bg-green-400/20 flex justify-center items-center text-green-400 text-2xl">
+              <i class="fab fa-whatsapp"></i>
+            </div>
 
-    </div>
+            <div>
+              <h3 class="font-bold text-lg">WhatsApp</h3>
+              <p class="text-gray-400">
+                +62 895-3655-69519
+              </p>
+            </div>
 
-    <!-- RIGHT FORM -->
-    <div class="glass p-5 md:p-10 rounded-[25px] md:rounded-[35px]">
-      <form
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- FORM -->
+      <div class="glass rounded-[35px] p-6 md:p-10">
+
+        <h2 class="text-3xl font-bold mb-8">
+          Send Message
+        </h2>
+
+        <form
         action="https://formsubmit.co/fadilahfarhan0529@gmail.com"
         method="POST"
-        class="space-y-6"
-      >
+        class="space-y-6">
 
-        <input type="hidden" name="_captcha" value="false">
-
-        <input
+          <input
           type="text"
-          name="name"
           placeholder="Your Name"
           required
-          class="w-full p-5 rounded-2xl bg-[#111827] border border-gray-700 outline-none"
-        >
+          class="w-full p-5 rounded-2xl bg-[#111827] border border-gray-700 outline-none">
 
-        <input
+          <input
           type="email"
-          name="email"
           placeholder="Your Email"
           required
-          class="w-full p-5 rounded-2xl bg-[#111827] border border-gray-700 outline-none"
-        >
+          class="w-full p-5 rounded-2xl bg-[#111827] border border-gray-700 outline-none">
 
-        <textarea
+          <textarea
           rows="6"
-          name="message"
           placeholder="Your Message"
           required
-          class="w-full p-5 rounded-2xl bg-[#111827] border border-gray-700 outline-none"
-        >
-          
-        </textarea>
+          class="w-full p-5 rounded-2xl bg-[#111827] border border-gray-700 outline-none resize-none"></textarea>
 
-        <button
-          type="submit"
-          class="w-full py-5 rounded-2xl text-lg font-bold bg-gradient-to-r from-cyan-400 to-purple-500 hover:scale-105 duration-300"
-        >
-          Send Message
-        </button>
-
-      </form>
-
-    </div>
-
-  </div>
-
-</section>
-<!-- COMMENT SECTION -->
-<section class="py-24 px-6 md:px-20">
-
-  <h1 class="text-4xl font-bold text-center mb-16">
-    Visitor <span class="text-cyan-400">Comments</span>
-  </h1>
-
-  <div class="max-w-3xl mx-auto">
-
-    <!-- FORM -->
-    <div class="glass p-8 rounded-3xl">
-
-      <input
-        type="text"
-        id="commentName"
-        placeholder="Your Name"
-        class="w-full p-4 rounded-xl bg-[#111827] border border-gray-700 mb-4"
-      >
-
-      <textarea
-        id="commentText"
-        rows="4"
-        placeholder="Write your comment..."
-        class="w-full p-4 rounded-xl bg-[#111827] border border-gray-700"
-      ></textarea>
-
-      <button
-        onclick="addComment()"
-        class="gradient w-full py-4 rounded-xl font-bold mt-4"
-      >
-        Send Comment
-      </button>
-
-    </div>
-
-    <!-- COMMENT LIST -->
-    <div id="commentList" class="mt-10 space-y-6"></div>
-
-  </div>
-
-</section>
-
-<!-- Modal Image -->
-<div
-  id="imageModal"
-  class="fixed inset-0 bg-black/80 hidden justify-center items-center z-50"
->
-
-  <span
-    onclick="closeImage()"
-    class="absolute top-5 right-8 text-white text-5xl cursor-pointer"
-  >
-    &times;
-  </span>
-
-  <img
-    id="modalImg"
-    class="max-w-[90%] max-h-[90%] rounded-3xl shadow-2xl"
-  >
-
-</div>
-<script>
-
-  let comments = JSON.parse(localStorage.getItem("comments")) || [];
-  
-  // PASSWORD ADMIN
-  const adminPassword = "farhan123";
-  
-  // TAMPILKAN KOMENTAR
-  function renderComments() {
-  
-    const commentList = document.getElementById("commentList");
-  
-    commentList.innerHTML = "";
-  
-    comments.forEach((comment, index) => {
-  
-      commentList.innerHTML += `
-      
-        <div class="glass p-6 rounded-3xl relative">
-  
-          <!-- Tombol Hapus -->
           <button
-            onclick="deleteComment(${index})"
-            class="absolute top-4 right-4 bg-red-500 hover:bg-red-600 px-3 py-1 rounded-lg text-sm font-bold"
-          >
-            Hapus
+          type="submit"
+          class="w-full py-5 rounded-2xl text-lg font-bold bg-gradient-to-r from-cyan-400 to-purple-500 hover:scale-[1.02] duration-300">
+            Send Message
           </button>
-  
-          <h2 class="text-cyan-400 text-xl font-bold">
-            ${comment.name}
-          </h2>
-  
-          <p class="text-gray-300 mt-3">
-            ${comment.text}
-          </p>
-  
-        </div>
-    
-  
-      `;
-  
-    });
-  
-  }
-  
-  // TAMBAH KOMENTAR
-  function addComment() {
-  
-    const name = document.getElementById("commentName").value;
-    const text = document.getElementById("commentText").value;
-  
-    if(name === "" || text === ""){
-      alert("Isi nama dan komentar dulu!");
-      return;
-    }
-  
-    comments.unshift({
-      name,
-      text
-    });
-  
-    localStorage.setItem("comments", JSON.stringify(comments));
-  
-    renderComments();
-  
-    document.getElementById("commentName").value = "";
-    document.getElementById("commentText").value = "";
-  
-  }
-  
-  // HAPUS KOMENTAR
-  function deleteComment(index){
-  
-    const password = prompt("Masukkan password admin:");
-  
-    if(password === adminPassword){
-  
-      comments.splice(index, 1);
-  
-      localStorage.setItem("comments", JSON.stringify(comments));
-  
-      renderComments();
-  
-      alert("Komentar berhasil dihapus");
-  
-    } else {
-  
-      alert("Password salah!");
-  
-    }
-  
-  }
-  
-  
-  // PERTAMA LOAD
-  renderComments();
-  
-  </script>
 
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        </form>
 
-<script>
-particlesJS("particles-js", {
-  particles: {
-    number: {
-      value: 80
-    },
-    color: {
-      value: "#00f5ff"
-    },
-    shape: {
-      type: "circle"
-    },
-    opacity: {
-      value: 0.5
-    },
-    size: {
-      value: 3
-    },
-    line_linked: {
-      enable: true,
-      color: "#00f5ff"
-    },
-    move: {
-      enable: true,
-      speed: 2
-    }
-  }
-});
-</script>
-<script>
-  // THEME TOGGLE
-  const themeToggle = document.getElementById("themeToggle");
+      </div>
 
-  themeToggle.addEventListener("click", () => {
+    </div>
 
-    document.body.classList.toggle("light-mode");
+  </div>
 
-    // GANTI ICON
-    if(document.body.classList.contains("light-mode")){
-      themeToggle.innerHTML = "☀️";
-    } else {
-      themeToggle.innerHTML = "🌙";
-    }
+</section>
 
-  });
-</script>
-
-<!-- Footer -->
+<!-- FOOTER -->
 <footer class="py-8 text-center text-gray-500 border-t border-gray-800">
   © 2026 Farhan Portofolio • Designed with FRN
 </footer>
 
+<!-- PARTICLES -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
 <script>
 
-// SIMPAN POSISI SCROLL SAAT KLIK CERTIFICATE
-document.querySelectorAll(`
-a[href="academic.html"],
-a[href="nonacademic.html"],
-a[href="hima.html"],
-a[href="PSM.html"]
-`).forEach(link => {
+/* LOADER */
+window.addEventListener("load", () => {
 
-  link.addEventListener("click", () => {
+  setTimeout(() => {
 
-    sessionStorage.setItem("scrollPosition", window.scrollY);
+    const loader = document.getElementById("loader");
 
-  });
+    loader.style.opacity = "0";
+    loader.style.transform = "scale(1.1)";
+
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 1000);
+
+  }, 2500);
 
 });
 
-// KEMBALIKAN POSISI SCROLL
-window.addEventListener("load", () => {
+/* PARTICLES */
+particlesJS("particles-js", {
 
-  const scrollPosition = sessionStorage.getItem("scrollPosition");
+  particles: {
 
-  if(scrollPosition !== null){
+    number:{
+      value:80
+    },
 
-    window.scrollTo({
-      top: parseInt(scrollPosition),
-      behavior: "smooth"
-    });
+    color:{
+      value:"#00f5ff"
+    },
 
-    sessionStorage.removeItem("scrollPosition");
+    shape:{
+      type:"circle"
+    },
+
+    opacity:{
+      value:0.5
+    },
+
+    size:{
+      value:3
+    },
+
+    line_linked:{
+      enable:true,
+      color:"#00f5ff"
+    },
+
+    move:{
+      enable:true,
+      speed:2
+    }
 
   }
 
 });
 
-</script>
+/* MOBILE MENU */
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMenu = document.getElementById("closeMenu");
 
-</body>
-</html>
+menuBtn.addEventListener("click", () => {
+  mobileMenu.style.right = "0";
+});
+
+closeMenu.addEventListener("click", () => {
+  mobileMenu.style.right = "-100%";
+});
+
+/* THEME */
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+
+  document.body.classList.toggle("light-mode");
+
+  if(document.body.classList.contains("light-mode")){
+    themeToggle.innerHTML = "☀️";
+  } else {
+    themeToggle.innerHTML = "🌙";
+  }
+
+});
+
+</script>
 
 </body>
 </html>

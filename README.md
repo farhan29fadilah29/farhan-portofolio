@@ -25,24 +25,6 @@ Portfolio ini memiliki tampilan modern dengan konsep:
 🎨 Gradient UI
 📱 Fully Responsive
 ⚡ Smooth Animation
-
-👨‍💻 About Project
-Website portfolio ini dibuat untuk menampilkan:
-Profile & About Me
-Skills
-Featured Projects
-Certificates
-Organizational Experience
-Contact Form
-Visitor Comment System
-Dark / Light Mode
-Interactive Animation
-Portfolio ini memiliki tampilan modern dengan konsep:
-✨ Glassmorphism
-🌌 Particle Background
-🎨 Gradient UI
-📱 Fully Responsive
-⚡ Smooth Animation
 Technology HTML,CSS,JAVA,CSS,AWESOME,JS
 --------------------------------------------------------------------
 
@@ -91,7 +73,7 @@ Pengalaman organisasi kampus dan kepanitiaan.
 📞 Contact
 Contact form dan social media.
 --------------------------------------------------------------------
-git clone https://github.com/username/repository.git
+git clone https://github.com/farhan29fadilah29/web-portofolio-farhan.git
 --------------------------------------------------------------------
 📦 portfolio
  ┣ 📜 index.html

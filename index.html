@@ -364,23 +364,30 @@ setTimeout(() => {
       }
     }
   });
-  
-  
+  <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
   // MOBILE MENU
   const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-const closeMenu = document.getElementById("closeMenu");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const closeMenu = document.getElementById("closeMenu");
 
-menuBtn.addEventListener("click", () => {
-  mobileMenu.style.right = "0";
+  // OPEN MENU
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.style.right = "0";
+  });
+
+  // CLOSE MENU
+  closeMenu.addEventListener("click", () => {
+    mobileMenu.style.right = "-100%";
+  });
+
 });
-
-closeMenu.addEventListener("click", () => {
-  mobileMenu.style.right = "-100%";
-});
-
 
 </script>
+  
+  
 </script>
 
 
@@ -881,8 +888,7 @@ class="hover:text-green-400 duration-300 hover:scale-125">
       </div>
   
     </div>
-  
-  </section>
+    
     <!-- Project 3 -->
     <div class="glass rounded-3xl overflow-hidden glow group">
 
@@ -1456,5 +1462,4 @@ window.addEventListener("load", () => {
 </body>
 </html>
 
-</body>
-</html>
+

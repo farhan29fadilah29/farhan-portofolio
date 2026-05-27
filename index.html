@@ -364,41 +364,23 @@ setTimeout(() => {
       }
     }
   });
-  #mobileMenu{
-  transition: right 0.4s ease;
-}
   
- // MOBILE MENU
-window.addEventListener("DOMContentLoaded", () => {
-
+  
+  // MOBILE MENU
   const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const closeMenu = document.getElementById("closeMenu");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMenu = document.getElementById("closeMenu");
 
-  // BUKA MENU
 menuBtn.addEventListener("click", () => {
   mobileMenu.style.right = "0";
 });
-  
-#mobileMenu{
-  transition: right 0.4s ease;
-}
-  // TUTUP MENU
-  closeMenu.addEventListener("click", () => {
-    mobileMenu.style.right = "-100%";
-  });
 
-  // TUTUP MENU SAAT KLIK LINK
-  document.querySelectorAll("#mobileMenu a").forEach(link => {
-    link.addEventListener("click", () => {
-      mobileMenu.style.right = "-100%";
-    });
-  });
-
+closeMenu.addEventListener("click", () => {
+  mobileMenu.style.right = "-100%";
 });
-  
 
 
+</script>
 </script>
 
 
@@ -1470,6 +1452,9 @@ window.addEventListener("load", () => {
 });
 
 </script>
+
+</body>
+</html>
 
 </body>
 </html>

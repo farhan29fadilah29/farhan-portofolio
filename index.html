@@ -1438,27 +1438,32 @@ a[href="PSM.html"]
   });
 
 });
-
-// KEMBALIKAN POSISI SCROLL
-window.addEventListener("load", () => {
-
-  const scrollPosition = sessionStorage.getItem("scrollPosition");
-
-  if(scrollPosition !== null){
-
-    window.scrollTo({
-      top: parseInt(scrollPosition),
-      behavior: "smooth"
-    });
-
-    sessionStorage.removeItem("scrollPosition");
-
-  }
-
-});
-
 </script>
+// KEMBALIKAN POSISI SCROLL
+<script>
 
+if(window.location.pathname.includes("index")){
+
+  window.addEventListener("load", () => {
+
+    const scrollPosition = sessionStorage.getItem("scrollPosition");
+
+    if(scrollPosition !== null){
+
+      window.scrollTo({
+        top: parseInt(scrollPosition),
+        behavior: "smooth"
+      });
+
+      sessionStorage.removeItem("scrollPosition");
+
+    }
+
+  });
+
+}
+</script>
+    
 </body>
 </html>
 

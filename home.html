@@ -1,0 +1,325 @@
+# Modern Portfolio Redesign
+
+Ganti tampilan lama menjadi modern dark neon portfolio seperti ini.
+
+## index.html
+
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farhan | Front-End Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    .glass{
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .gradient{
+      background: linear-gradient(135deg,#00f5ff,#7b2ff7);
+    }
+
+    .glow:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 30px rgba(0,245,255,0.5);
+      transition:0.4s ease;
+    }
+
+    .typing{
+      border-right:3px solid #00f5ff;
+      white-space:nowrap;
+      overflow:hidden;
+      width:0;
+      animation:typing 4s steps(30,end) forwards, blink 0.8s infinite;
+    }
+
+    @keyframes typing{
+      from{width:0}
+      to{width:100%}
+    }
+
+    @keyframes blink{
+      50%{border-color:transparent}
+    }
+
+    .floating{
+      animation:float 4s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-15px)}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="fixed w-full top-0 z-50 glass px-8 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-cyan-400">FRN Portfolio</h1>
+
+    <ul class="hidden md:flex gap-8 text-sm font-medium">
+      <li><a href="#home" class="hover:text-cyan-400 duration-300">Home</a></li>
+      <li><a href="#about" class="hover:text-cyan-400 duration-300">About</a></li>
+      <li><a href="#skills" class="hover:text-cyan-400 duration-300">Skills</a></li>
+      <li><a href="#project" class="hover:text-cyan-400 duration-300">Projects</a></li>
+      <li><a href="#contact" class="hover:text-cyan-400 duration-300">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+
+    <img
+      src="frhn.jpg"
+      class="w-44 h-44 rounded-full border-4 border-cyan-400 object-cover floating shadow-2xl"
+    >
+
+    <h2 class="text-5xl font-bold mt-8">
+      Hi, I'm <span class="text-cyan-400">Farhan</span>
+    </h2>
+
+    <div class="overflow-hidden w-[320px] mt-4">
+      <p class="typing text-xl text-gray-300">
+        Front-End Developer & UI Designer
+      </p>
+    </div>
+
+    <p class="max-w-2xl text-gray-400 mt-6 leading-8">
+      Saya membuat website modern, responsive, aesthetic dan interaktif dengan pengalaman UI/UX yang menarik.
+    </p>
+
+    <div class="flex gap-4 mt-8">
+      <a href="#project" class="gradient px-8 py-3 rounded-full font-semibold hover:scale-105 duration-300">
+        View Project
+      </a>
+
+      <a href="#contact" class="border border-cyan-400 px-8 py-3 rounded-full hover:bg-cyan-400 hover:text-black duration-300">
+        CV
+      </a>
+      <a href="#contact" class="border border-cyan-400 px-8 py-3 rounded-full hover:bg-cyan-400 hover:text-black duration-300">
+        Contact Me
+      </a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 px-6 md:px-20">
+
+    <h1 class="text-4xl font-bold text-center mb-16">
+      About <span class="text-cyan-400">Me</span>
+    </h1>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+
+      <div>
+        <img
+          src="https://i.pinimg.com/736x/53/66/8d/53668d6d6fe8eafdb0b9e9f2c0ce4e9f.jpg"
+          class="rounded-3xl shadow-2xl"
+        >
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-bold mb-6">
+          Front-End Developer
+        </h2>
+
+        <p class="text-gray-400 leading-8">
+          Saya seorang Front-End Developer yang berfokus pada pembuatan website modern,
+  responsive, dan interaktif menggunakan HTML, CSS, JavaScript, React, Python,
+  serta Tailwind CSS. Saya juga memiliki kemampuan dalam UI/UX Design,
+  Data Analyst, Networking, dan Microsoft Office untuk menciptakan solusi digital
+  yang tidak hanya menarik secara visual tetapi juga efektif dan mudah digunakan
+        </p>
+
+        <div class="grid grid-cols-2 gap-6 mt-10">
+
+          <div class="glass p-6 rounded-2xl glow">
+            <h3 class="text-3xl font-bold text-cyan-400">20+</h3>
+            <p class="text-gray-400 mt-2">Projects</p>
+          </div>
+
+          <div class="glass p-6 rounded-2xl glow">
+            <h3 class="text-3xl font-bold text-cyan-400">2+</h3>
+            <p class="text-gray-400 mt-2">Years Experience</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-24 px-6 md:px-20 bg-[#0d1224]">
+
+    <h1 class="text-4xl font-bold text-center mb-16">
+      My <span class="text-cyan-400">Skills</span>
+    </h1>
+
+    <div class="grid md:grid-cols-4 gap-8">
+
+      <div class="glass p-8 rounded-3xl text-center glow">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" class="w-16 mx-auto">
+        <h2 class="mt-4 text-xl font-semibold">HTML</h2>
+      </div>
+
+      <div class="glass p-8 rounded-3xl text-center glow">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" class="w-16 mx-auto">
+        <h2 class="mt-4 text-xl font-semibold">CSS</h2>
+      </div>
+
+      <div class="glass p-8 rounded-3xl text-center glow">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" class="w-16 mx-auto">
+        <h2 class="mt-4 text-xl font-semibold">JavaScript</h2>
+      </div>
+
+      <div class="glass p-8 rounded-3xl text-center glow">
+        <img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" class="w-16 mx-auto">
+        <h2 class="mt-4 text-xl font-semibold">React</h2>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="project" class="py-24 px-6 md:px-20">
+
+    <h1 class="text-4xl font-bold text-center mb-16">
+      Featured <span class="text-cyan-400">Projects</span>
+    </h1>
+
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <div class="glass rounded-3xl overflow-hidden glow">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" class="h-56 w-full object-cover">
+
+        <div class="p-6">
+          <h2 class="text-2xl font-bold">Wedding Website</h2>
+          <p class="text-gray-400 mt-3 leading-7">
+            Website undangan digital aesthetic dengan animasi modern.
+          </p>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl overflow-hidden glow">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" class="h-56 w-full object-cover">
+
+        <div class="p-6">
+          <h2 class="text-2xl font-bold">Portfolio Website</h2>
+          <p class="text-gray-400 mt-3 leading-7">
+            Portfolio interaktif menggunakan Tailwind CSS dan JavaScript.
+          </p>
+        </div>
+      </div>
+
+      <div class="glass rounded-3xl overflow-hidden glow">
+        <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4" class="h-56 w-full object-cover">
+
+        <div class="p-6">
+          <h2 class="text-2xl font-bold">E-Commerce UI</h2>
+          <p class="text-gray-400 mt-3 leading-7">
+            Tampilan online shop responsive dan clean UI.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 px-6 md:px-20 bg-[#0d1224]">
+
+    <h1 class="text-4xl font-bold text-center mb-16">
+      Contact <span class="text-cyan-400">Me</span>
+    </h1>
+
+    <div class="max-w-3xl mx-auto glass p-10 rounded-3xl">
+
+      <form class="space-y-6">
+
+        <input
+          type="text"
+          placeholder="Your Name"
+          class="w-full p-4 rounded-xl bg-[#111827] border border-gray-700 outline-none"
+        >
+
+        <input
+          type="email"
+          placeholder="Your Email"
+          class="w-full p-4 rounded-xl bg-[#111827] border border-gray-700 outline-none"
+        >
+
+        <textarea
+          rows="5"
+          placeholder="Your Message"
+          class="w-full p-4 rounded-xl bg-[#111827] border border-gray-700 outline-none"
+        ></textarea>
+
+        <button class="gradient w-full py-4 rounded-xl font-bold text-lg hover:scale-105 duration-300">
+          Send Message
+        </button>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 text-center text-gray-500 border-t border-gray-800">
+    © 2026 Farhan Portfolio • Designed with ❤️
+  </footer>
+
+</body>
+</html>
+```
+
+## Yang sudah diubah
+
+* Modern UI dark neon
+* Responsive mobile
+* Glassmorphism effect
+* Typing animation
+* Floating profile animation
+* Hover glow effect
+* Tailwind CSS modern layout
+* Clean portfolio section
+* Modern contact form
+* Attractive project cards
+* Smooth scrolling
+* Professional design
+
+## Cara menjalankan
+
+1. Simpan sebagai `index.html`
+2. Buka menggunakan browser
+3. Atau gunakan VS Code + Live Server
+
+## Tips tambahan
+
+* Ganti gambar profile dengan foto sendiri
+* Tambahkan project asli
+* Tambahkan link GitHub dan Instagram
+* Bisa ditambahkan AOS animation atau particles background

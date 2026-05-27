@@ -288,9 +288,9 @@ class="fixed inset-0 bg-[#050816] flex flex-col justify-center items-center z-[9
     </div>
 
     <!-- Text -->
-    <h1 class="mt-10 text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent tracking-widest animate-pulse">
-      FARHAN PORTFOLIO
-    </h1>
+    <h1 class="mt-10 text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent tracking-widest animate-pulse text-center w-full">
+  FARHAN PORTOFOLIO
+   </h1>
 
     <p class="text-gray-400 mt-3 tracking-[6px] text-sm">
       WELCOME
@@ -391,7 +391,7 @@ closeMenu.addEventListener("click", () => {
 <nav class="fixed top-0 w-full z-50 glass px-6 md:px-10 py-4 flex justify-between items-center">
 
   <h1 class="text-lg md:text-2xl font-bold text-cyan-400">
-    Farhan Portfolio
+    Farhan Portofolio
   </h1>
 
   <!-- MENU DESKTOP -->
@@ -766,6 +766,46 @@ class="hover:text-green-400 duration-300 hover:scale-125">
 
     </div>
 
+    <!-- Project FIGMA -->
+<div class="glass rounded-3xl overflow-hidden glow group">
+
+  <!-- IMAGE -->
+  <div class="relative overflow-hidden">
+
+    <img
+      src="figma.png"
+      class="w-full h-60 object-contain bg-white p-4"
+      onclick="openImage(this.src)"
+    >
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 duration-300 flex justify-center items-center">
+
+      <a href="https://www.figma.com/"
+        target="_blank"
+        class="bg-cyan-400 text-black px-6 py-3 rounded-xl font-bold hover:scale-110 duration-300">
+        View Project
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- TEXT -->
+  <div class="p-6">
+
+    <h2 class="text-2xl font-bold">
+      Figma Design
+    </h2>
+
+    <p class="text-gray-400 mt-3">
+      UI/UX mobile dan website design menggunakan Figma.
+    </p>
+
+  </div>
+
+</div>
+
     <!-- Project 2 -->
     <div class="glass rounded-3xl overflow-hidden glow group">
 
@@ -1053,16 +1093,16 @@ SECTION ORGANIZATION
 <a 
 href="mailto:fadilahfarhan0529@gmail.com"
 target="_blank"
-class="flex items-center gap-3 md:gap-5 mb-5 hover:scale-105 duration-300"
+class="flex items-center gap-5 mb-6 hover:scale-105 duration-300"
 >
 
-<div class="class="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl">
+<div class="w-14 h-14 rounded-2xl bg-red-400/20 flex justify-center items-center text-red-400 text-2xl">
   <i class="fas fa-envelope"></i>
 </div>
 
 <div>
-  <h3 class="font-bold text-base md:text-lg">Email</h3>
-  <p class="text-gray-400 text-sm md:text-base break-all">
+  <h3 class="font-bold text-lg">Email</h3>
+  <p class="text-gray-400">
     fadilahfarhan0529@gmail.com
   </p>
 </div>
@@ -1374,7 +1414,7 @@ particlesJS("particles-js", {
 
 <!-- Footer -->
 <footer class="py-8 text-center text-gray-500 border-t border-gray-800">
-  © 2026 Farhan Portfolio • Designed with FRN
+  © 2026 Farhan Portofolio • Designed with FRN
 </footer>
 
 </body>

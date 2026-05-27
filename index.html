@@ -87,45 +87,90 @@ body.light-mode #mobileMenu{
     }
 
     .typing-container{
-      height:70px;
-      display:flex;
+  display:flex;
   justify-content:center;
   align-items:center;
-  overflow:hidden;
+  min-height:60px;
 }
 
 .typing-wrapper{
   position:relative;
-  width:500px;
-  height:60px;
+  width:100%;
+  max-width:1000px;
+  height:40px;
 }
 
 .typing-text{
   position:absolute;
-  width:100%;
-  text-align:center;
+  inset:0;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
   font-size:22px;
   font-weight:600;
   color:#00f5ff;
 
+  white-space: nowrap;
+
   opacity:0;
 
-  animation:textAnimation 9s infinite;
+  animation:typingFade 9s infinite;
 }
+
+/* DELAY */
+.typing-text:nth-child(1){
+  animation-delay:0s;
+}
+
+.typing-text:nth-child(2){
+  animation-delay:3s;
+}
+
+.typing-text:nth-child(3){
+  animation-delay:6s;
+}
+
+@keyframes typingFade{
+
+  0%{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  10%{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  30%{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  40%{
+    opacity:0;
+    transform:translateY(-20px);
+  }
+
+  100%{
+    opacity:0;
+  }
+
+}
+
+/* MOBILE */
 @media(max-width:640px){
 
-.typing-wrapper{
-  width:100%;
-  height:70px;
-}
-
-.typing-text{
-  font-size:20px;
-  padding:0 10px;
-}
+  .typing-text{
+    font-size:18px;
+    text-align:center;
+    padding:0 10px;
+  }
 
 }
+
 /* Delay tiap text */
 .typing-text:nth-child(1){
   animation-delay:0s;
@@ -141,12 +186,7 @@ body.light-mode #mobileMenu{
 
 @keyframes textAnimation{
 
-  0%{
-    opacity:0;
-    transform:
-      rotateX(90deg)
-      translateY(30px);
-  }
+
 
   10%{
     opacity:1;
@@ -162,12 +202,7 @@ body.light-mode #mobileMenu{
       translateY(0);
   }
 
-  40%{
-    opacity:0;
-    transform:
-      rotateX(-90deg)
-      translateY(-30px);
-  }
+
 
   100%{
     opacity:0;
@@ -209,6 +244,18 @@ body.light-mode #mobileMenu{
     width:100%;
   }
 }
+html, body{
+  overflow-x: hidden;
+  width: 100%;
+}
+
+section{
+  overflow-x: hidden;
+}
+
+img{
+  max-width: 100%;
+}
   </style>
 </head>
 
@@ -223,8 +270,7 @@ body.light-mode #mobileMenu{
 class="fixed inset-0 bg-[#050816] flex flex-col justify-center items-center z-[9999] overflow-hidden">
 
   <!-- Blur Circle -->
-  <div class="absolute w-[400px] h-[400px] bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
-
+  <div class="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
   <!-- Logo -->
   <div class="relative z-10 flex flex-col items-center">
 
@@ -319,6 +365,7 @@ setTimeout(() => {
     }
   });
   
+  
   // MOBILE MENU
   const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -331,6 +378,7 @@ menuBtn.addEventListener("click", () => {
 closeMenu.addEventListener("click", () => {
   mobileMenu.style.right = "-100%";
 });
+
 
 </script>
 </script>
@@ -415,12 +463,11 @@ closeMenu.addEventListener("click", () => {
     src="frhn.jpg"
     class="w-44 h-44 rounded-full object-cover border-4 border-cyan-400 floating"
   >
-
-  <h1 class="text-4xl md:text-6xl font-bold mt-8 leading-tight">
-  Hi, I'm <span class="text-cyan-400">Farhan Fadilah Maulana</span>
+  <h1 class="text-4xl md:text-6xl font-bold mt-8 leading-tight text-center relative z-10">
+    Hi, I'm <span class="text-cyan-400">Farhan Fadilah Maulana</span>
   </h1>
   
-  <div class="typing-container mt-4">
+  <div class="typing-container mt-4 relative z-10">
   
     <div class="typing-wrapper">
   
@@ -446,20 +493,20 @@ closeMenu.addEventListener("click", () => {
 
   <!-- VIEW PROJECT -->
   <a href="#project"
-    class="gradient px-10 py-4 rounded-full font-semibold text-lg shadow-lg hover:scale-105 duration-300 min-w-[220px] text-center">
+    class="gradient px-10 py-4 rounded-full font-semibold text-lg shadow-lg hover:scale-105 duration-300 w-full sm:w-auto text-center">
     View Project
   </a>
 
   <!-- CONTACT -->
   <a href="#contact"
-    class="border border-cyan-400 px-10 py-4 rounded-full text-lg hover:bg-cyan-400 hover:text-black duration-300 min-w-[220px] text-center">
+    class="border border-cyan-400 px-10 py-4 rounded-full text-lg hover:bg-cyan-400 hover:text-black duration-300 w-full sm:w-auto text-center">
     Contact Me
   </a>
 
   <!-- DOWNLOAD CV -->
   <a href="Farhan Fadilah Maulana CV_.pdf"
     download
-    class="border border-cyan-400 px-10 py-4 rounded-full text-lg hover:bg-cyan-400 hover:text-black duration-300 min-w-[220px] text-center">
+    class="border border-cyan-400 px-10 py-4 rounded-full text-lg hover:bg-cyan-400 hover:text-black duration-300 w-full sm:w-auto text-center">
     Download CV
   </a>
 
@@ -525,9 +572,11 @@ class="hover:text-green-400 duration-300 hover:scale-125">
 
   <!-- IMAGE -->
   <img
-    src="frhn.jpg"
-    class="relative rounded-3xl shadow-2xl w-[350px] md:w-[450px]"
-  >
+  src="frhn.jpg"
+  class="relative rounded-3xl shadow-2xl 
+  w-full max-w-[280px] md:max-w-[350px]
+  hover:scale-105 duration-500"
+/>
 
   <!-- FLOATING ICON -->
   <div class="absolute -top-4 -left-4 glass p-3 rounded-2xl">
